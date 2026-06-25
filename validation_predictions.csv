@@ -1,0 +1,21 @@
+date,home_team,away_team,result,hgb_pred,logreg_pred,baseline_pred,hgb_correct
+2026-06-11,Mexico,South Africa,H,H,H,H,True
+2026-06-11,South Korea,Czech Republic,H,H,H,H,True
+2026-06-12,Canada,Bosnia and Herzegovina,D,H,H,H,False
+2026-06-12,United States,Paraguay,H,H,H,H,True
+2026-06-13,Brazil,Morocco,D,H,H,H,False
+2026-06-13,Haiti,Scotland,A,A,A,A,True
+2026-06-13,Australia,Turkey,H,A,A,A,False
+2026-06-13,Qatar,Switzerland,D,A,A,A,False
+2026-06-14,Germany,Curaçao,H,H,H,H,True
+2026-06-14,Ivory Coast,Ecuador,H,A,A,A,False
+2026-06-14,Netherlands,Japan,D,H,H,H,False
+2026-06-14,Sweden,Tunisia,H,H,H,H,True
+2026-06-15,Spain,Cape Verde,D,H,H,H,False
+2026-06-15,Saudi Arabia,Uruguay,D,A,A,A,False
+2026-06-15,Belgium,Egypt,D,H,H,H,False
+2026-06-15,Iran,New Zealand,D,H,H,H,False
+2026-06-16,France,Senegal,H,H,H,H,True
+2026-06-16,Iraq,Norway,A,A,A,A,True
+2026-06-16,Argentina,Algeria,H,H,H,H,True
+2026-06-16,Austria,Jordan,H,H,H,H,True

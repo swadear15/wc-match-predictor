@@ -1,0 +1,3 @@
+model,train_acc,val_acc,train_logloss,val_logloss,macro_f1,weighted_f1
+Baseline (Elo only),,0.5,,,0.38888888888888884,
+Final model (weighted HGB),0.5618257261410788,0.4,0.9133450752668975,1.034931062738019,0.39886039886039887,0.3897435897435898
