@@ -1,0 +1,9 @@
+feature_set,LOEO_logloss_1986-2022,LOEO_accuracy_1986-2022,holdout_2026_logloss,holdout_2026_accuracy,coefficients
+pre-tournament Elo only,0.6251899280282474,0.64,0.4470157414341092,0.8064516129032258,{'d_elo_pre': np.float64(0.569)}
+Elo after group stage,0.5896822063600444,0.6933333333333334,0.4185567584334987,0.7741935483870968,{'d_elo': np.float64(0.777)}
+Elo + group over-performance,0.5920683490593127,0.6866666666666666,0.41847841016094145,0.7741935483870968,"{'d_elo': np.float64(0.789), 'd_overperf': np.float64(0.394)}"
+Elo + group goal diff/game,0.5832817188312233,0.68,0.44596066729039463,0.7096774193548387,"{'d_elo': np.float64(0.588), 'd_gd_pg': np.float64(0.388)}"
+Elo + group points/game,0.5924217641288066,0.7,0.42093176569663987,0.7096774193548387,"{'d_elo': np.float64(0.679), 'd_ppg': np.float64(0.291)}"
+Elo + group goals/game,0.5866187054886012,0.6933333333333334,0.4450915853243059,0.7096774193548387,"{'d_elo': np.float64(0.682), 'd_gf_pg': np.float64(0.299)}"
+Elo + won group,0.5885859561518134,0.72,0.428312097061946,0.7741935483870968,"{'d_elo': np.float64(0.662), 'd_won_group': np.float64(0.31)}"
+pre Elo + all group stats,0.5893471333364751,0.6733333333333333,0.4667484069451897,0.7419354838709677,"{'d_elo_pre': np.float64(0.367), 'd_overperf': np.float64(-0.661), 'd_gd_pg': np.float64(0.557), 'd_ppg': np.float64(0.046), 'd_won_group': np.float64(0.244)}"
