@@ -1,0 +1,5 @@
+model,n,accuracy,log_loss,brier
+knockout_model_after_groups,31,0.7742,0.4186,0.1347
+elo_pre_tournament,31,0.8065,0.447,0.142
+v2_match_model,31,0.8065,0.484,0.1541
+v1_original,31,0.871,0.5146,0.1669

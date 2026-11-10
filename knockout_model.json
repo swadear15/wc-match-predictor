@@ -1,0 +1,10 @@
+{
+  "features": [
+    "d_elo"
+  ],
+  "coef": [
+    0.8601439695597627
+  ],
+  "n_matches": 181,
+  "note": "P(team1 advances) = sigmoid(sum(coef*feature)); d_elo = Elo gap/100"
+}

@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 
 # Load all sources
-results = pd.read_csv('/mnt/user-data/uploads/results.csv', parse_dates=['date'])
-shootouts = pd.read_csv('/mnt/user-data/uploads/shootouts.csv', parse_dates=['date'])
-goalscorers = pd.read_csv('/mnt/user-data/uploads/goalscorers.csv', parse_dates=['date'])
-former_names = pd.read_csv('/mnt/user-data/uploads/former_names.csv')
+results = pd.read_csv('results.csv', parse_dates=['date'])
+shootouts = pd.read_csv('shootouts.csv', parse_dates=['date'])
+goalscorers = pd.read_csv('goalscorers.csv', parse_dates=['date'])
+former_names = pd.read_csv('former_names.csv')
 
 # --- 1. Split played vs upcoming (future fixtures have no score yet) ---
 played = results[results.home_score.notna()].copy()
@@ -65,8 +65,8 @@ played['is_world_cup'] = played['tournament'] == 'FIFA World Cup'
 upcoming['is_world_cup'] = upcoming['tournament'] == 'FIFA World Cup'
 
 # Save outputs
-played.to_csv('/home/claude/wc_project/matches_played.csv', index=False)
-upcoming.to_csv('/home/claude/wc_project/fixtures_upcoming.csv', index=False)
+played.to_csv('matches_played.csv', index=False)
+upcoming.to_csv('fixtures_upcoming.csv', index=False)
 
 print("=== matches_played.csv ===")
 print(f"Shape: {played.shape}")
