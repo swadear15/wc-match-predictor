@@ -1,0 +1,32 @@
+round,team1,team2,winner,p_team1_advances,predicted_winner,correct
+Round of 32,South Africa,Canada,Canada,0.251,Canada,True
+Round of 32,Brazil,Japan,Brazil,0.685,Brazil,True
+Round of 32,Germany,Paraguay,Paraguay,0.675,Germany,False
+Round of 32,Netherlands,Morocco,Morocco,0.548,Netherlands,False
+Round of 32,Ivory Coast,Norway,Norway,0.287,Norway,True
+Round of 32,France,Sweden,France,0.947,France,True
+Round of 32,Mexico,Ecuador,Mexico,0.542,Mexico,True
+Round of 32,England,DR Congo,England,0.902,England,True
+Round of 32,Belgium,Senegal,Belgium,0.612,Belgium,True
+Round of 32,United States,Bosnia and Herzegovina,United States,0.809,United States,True
+Round of 32,Spain,Austria,Spain,0.912,Spain,True
+Round of 32,Portugal,Croatia,Portugal,0.661,Portugal,True
+Round of 32,Switzerland,Algeria,Switzerland,0.674,Switzerland,True
+Round of 32,Australia,Egypt,Egypt,0.592,Australia,False
+Round of 32,Argentina,Cape Verde,Argentina,0.982,Argentina,True
+Round of 32,Colombia,Ghana,Colombia,0.956,Colombia,True
+Round of 16,Canada,Morocco,Morocco,0.217,Morocco,True
+Round of 16,Paraguay,France,France,0.102,France,True
+Round of 16,Brazil,Norway,Norway,0.704,Brazil,False
+Round of 16,Mexico,England,England,0.331,England,True
+Round of 16,Portugal,Spain,Spain,0.236,Spain,True
+Round of 16,United States,Belgium,Belgium,0.341,Belgium,True
+Round of 16,Argentina,Egypt,Argentina,0.943,Argentina,True
+Round of 16,Switzerland,Colombia,Switzerland,0.311,Colombia,False
+Quarter-final,France,Morocco,France,0.778,France,True
+Quarter-final,Spain,Belgium,Spain,0.867,Spain,True
+Quarter-final,Norway,England,England,0.276,England,True
+Quarter-final,Argentina,Switzerland,Argentina,0.864,Argentina,True
+Semi-final,France,Spain,Spain,0.457,Spain,True
+Semi-final,England,Argentina,Argentina,0.289,Argentina,True
+Final,Spain,Argentina,Spain,0.468,Argentina,False

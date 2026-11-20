@@ -1,0 +1,32 @@
+round,predicted_matchup,predicted_winner,p_predicted_winner,actual_matchup,actual_winner,correct
+Round of 32,South Africa vs Canada,Canada,0.749,South Africa vs Canada,Canada,True
+Round of 32,Brazil vs Japan,Brazil,0.685,Brazil vs Japan,Brazil,True
+Round of 32,Germany vs Paraguay,Germany,0.675,Germany vs Paraguay,Paraguay,False
+Round of 32,Netherlands vs Morocco,Netherlands,0.548,Netherlands vs Morocco,Morocco,False
+Round of 32,Ivory Coast vs Norway,Norway,0.713,Ivory Coast vs Norway,Norway,True
+Round of 32,France vs Sweden,France,0.947,France vs Sweden,France,True
+Round of 32,Mexico vs Ecuador,Mexico,0.542,Mexico vs Ecuador,Mexico,True
+Round of 32,England vs DR Congo,England,0.902,England vs DR Congo,England,True
+Round of 32,Belgium vs Senegal,Belgium,0.612,Belgium vs Senegal,Belgium,True
+Round of 32,United States vs Bosnia and Herzegovina,United States,0.809,United States vs Bosnia and Herzegovina,United States,True
+Round of 32,Spain vs Austria,Spain,0.912,Spain vs Austria,Spain,True
+Round of 32,Portugal vs Croatia,Portugal,0.661,Portugal vs Croatia,Portugal,True
+Round of 32,Switzerland vs Algeria,Switzerland,0.674,Switzerland vs Algeria,Switzerland,True
+Round of 32,Australia vs Egypt,Australia,0.592,Australia vs Egypt,Egypt,False
+Round of 32,Argentina vs Cape Verde,Argentina,0.982,Argentina vs Cape Verde,Argentina,True
+Round of 32,Colombia vs Ghana,Colombia,0.956,Colombia vs Ghana,Colombia,True
+Round of 16,Canada vs Netherlands,Netherlands,0.814,Canada vs Morocco,Morocco,False
+Round of 16,Germany vs France,France,0.81,Paraguay vs France,France,True
+Round of 16,Brazil vs Norway,Brazil,0.704,Brazil vs Norway,Norway,False
+Round of 16,Mexico vs England,England,0.669,Mexico vs England,England,True
+Round of 16,Portugal vs Spain,Spain,0.764,Portugal vs Spain,Spain,True
+Round of 16,United States vs Belgium,Belgium,0.659,United States vs Belgium,Belgium,True
+Round of 16,Argentina vs Australia,Argentina,0.919,Argentina vs Egypt,Argentina,True
+Round of 16,Switzerland vs Colombia,Colombia,0.689,Switzerland vs Colombia,Switzerland,False
+Quarter-final,France vs Netherlands,France,0.744,France vs Morocco,France,True
+Quarter-final,Spain vs Belgium,Spain,0.867,Spain vs Belgium,Spain,True
+Quarter-final,Brazil vs England,England,0.524,Norway vs England,England,True
+Quarter-final,Argentina vs Colombia,Argentina,0.742,Argentina vs Switzerland,Argentina,True
+Semi-final,France vs Spain,Spain,0.543,France vs Spain,Spain,True
+Semi-final,England vs Argentina,Argentina,0.711,England vs Argentina,Argentina,True
+Final,Spain vs Argentina,Argentina,0.532,Spain vs Argentina,Spain,False

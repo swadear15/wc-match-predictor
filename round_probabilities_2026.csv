@@ -1,0 +1,33 @@
+team,P_round_of_16,P_quarter_final,P_semi_final,P_final,P_champion,actual_result
+Argentina,0.9822,0.9119,0.7144,0.5461,0.3338,Final
+Spain,0.912,0.7274,0.6539,0.4205,0.2468,Champion
+France,0.9475,0.7945,0.6264,0.3638,0.1993,Semi-final
+England,0.9016,0.618,0.3868,0.1454,0.0589,Semi-final
+Colombia,0.9562,0.7,0.2156,0.1162,0.0432,Round of 16
+Brazil,0.6846,0.5117,0.2823,0.1003,0.0385,Round of 16
+Netherlands,0.5476,0.4616,0.155,0.0557,0.0175,Round of 32
+Portugal,0.6609,0.1866,0.1375,0.0527,0.0172,Round of 16
+Morocco,0.4524,0.3694,0.1106,0.0358,0.0099,Quarter-final
+Mexico,0.5418,0.2054,0.0951,0.023,0.0061,Round of 16
+Germany,0.6753,0.1504,0.0728,0.0211,0.0051,Round of 32
+Belgium,0.6121,0.4307,0.0877,0.0218,0.0044,Quarter-final
+Norway,0.7129,0.2516,0.088,0.0177,0.0039,Quarter-final
+Japan,0.3154,0.1838,0.068,0.0146,0.0034,Round of 32
+Ecuador,0.4582,0.1577,0.0668,0.0144,0.0034,Round of 32
+Switzerland,0.6741,0.2272,0.0417,0.0147,0.0033,Quarter-final
+Croatia,0.3391,0.0609,0.0361,0.0092,0.0019,Round of 32
+Senegal,0.3879,0.235,0.034,0.0061,0.0009,Round of 32
+United States,0.8092,0.3097,0.038,0.0058,0.0007,Round of 16
+Australia,0.5921,0.056,0.0148,0.0035,0.0005,Round of 32
+Paraguay,0.3247,0.0427,0.0138,0.0025,0.0003,Round of 16
+Austria,0.088,0.0251,0.0119,0.0021,0.0003,Round of 32
+Canada,0.749,0.1496,0.018,0.0025,0.0003,Round of 16
+Algeria,0.3259,0.0676,0.0074,0.0016,0.0002,Round of 32
+Egypt,0.4079,0.0286,0.0058,0.001,0.0001,Round of 16
+Ivory Coast,0.2871,0.0528,0.0097,0.001,0.0001,Round of 32
+Sweden,0.0525,0.0124,0.0025,0.0003,0.0,Round of 32
+DR Congo,0.0984,0.0189,0.0032,0.0002,0.0,Round of 32
+South Africa,0.251,0.0194,0.0009,0.0001,0.0,Round of 32
+Bosnia and Herzegovina,0.1908,0.0246,0.0008,0.0,0.0,Round of 32
+Cape Verde,0.0178,0.0035,0.0003,0.0,0.0,Round of 32
+Ghana,0.0438,0.0052,0.0002,0.0,0.0,Round of 32

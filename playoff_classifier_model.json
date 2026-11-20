@@ -1,0 +1,7 @@
+{
+  "model": "logit: Elo after groups",
+  "trained_on": "1986-2022 World Cup knockout games",
+  "features": [
+    "d_elo_post"
+  ]
+}

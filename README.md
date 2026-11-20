@@ -1,8 +1,9 @@
 # ⚽ FIFA World Cup Match & Playoff Predictor
 
 An end-to-end machine learning pipeline that (1) predicts international match outcomes
-(home win / draw / away win) from 150 years of results and (2) uses a World Cup **group stage to
-predict the knockout rounds**, by simulating the full bracket. Everything is backtested the honest way: train on the
+(home win / draw / away win) from 150 years of results and (2) uses a World Cup **group stage and
+previous World Cups to predict the knockout bracket**, treating each knockout game as a win/lose
+classification (no draws in the playoffs). Everything is backtested the honest way: train on the
 past, predict the future, compare with what actually happened in the 2026 World Cup.
 
 ---
@@ -66,6 +67,64 @@ On the 31 real knockout games: the knockout model scored log-loss **0.419** (acc
 
 ---
 
+## 🏆 Knockout bracket classifier (v3)
+
+Knockout games can't end in a draw (extra time and penalties decide them), so `playoff_classifier.py`
+treats each one as a **binary classification: does team 1 advance?** It is trained on every World Cup
+knockout game from 1986-2022 (150 games, third-place games excluded) and tested on the 31 knockout
+games of 2026, which it never sees during training.
+
+**Features are frozen at the end of the group stage**, which is all you know when you fill in a bracket.
+A quarter-final row does not see the round-of-16 results. All 15 candidates are "team 1 minus team 2":
+- **Strength:** Elo before the tournament, Elo after the group stage, Elo gained in the group stage
+- **Group stage:** points, goal difference, goals for and against per game, over-performance vs Elo, group winner, finishing position
+- **Previous World Cups:** games played at the last edition (how far they went), games and win rate over the last 3 editions, titles won
+- **Venue:** host nation
+
+Every model is trained on both orientations of each game, with symmetrised predictions, so
+P(A beats B) = 1 − P(B beats A) exactly.
+
+| Model | Features | LOEO log-loss ↓ | 2026 log-loss ↓ | 2026 games correct | 2026 bracket (pts / 80) |
+|---|---|---|---|---|---|
+| **Logistic: Elo after group stage (selected)** | 1 | 0.594 | **0.410** | 25 / 31 | 55 |
+| Logistic: pre-tournament Elo (ignores group stage) | 1 | 0.625 | 0.448 | 25 / 31 | 70 |
+| Logistic: group stage only (no Elo) | 4 | **0.587** | 0.531 | 24 / 31 | 38 |
+| Logistic: Elo + group stage | 5 | 0.589 | 0.475 | 23 / 31 | 43 |
+| Logistic: Elo + previous World Cups | 4 | 0.600 | 0.461 | 24 / 31 | 43 |
+| Logistic: all 15 features | 15 | 0.603 | 0.518 | 21 / 31 | 40 |
+| Gradient boosting: all features | 15 | 0.616 | 0.497 | 25 / 31 | 46 |
+| Random forest: all features | 15 | 0.593 | 0.499 | 24 / 31 | 43 |
+
+LOEO = leave-one-World-Cup-out on 1986-2022. Coin flip = log-loss 0.693 and an expected 15.5 / 80 bracket
+points. Bracket scoring: each round is worth 16 points (1-2-4-8-16 per correct pick), and a pick only scores
+if that team actually won the game in that slot. Full table: `playoff_classifier_results.csv`.
+
+**What the data says**
+- **The group stage carries real signal.** A model that sees only group results (no ratings at all) is as good as
+  the Elo models, and Elo updated through the group stage beats pre-tournament Elo on both the 1986-2022
+  cross-validation and on 2026.
+- **150 games can't separate the top models.** Eight of the ten are within one standard error of the best
+  cross-validated log-loss (paired, per game). So the classifier uses the one-standard-error rule: the simplest
+  model that is statistically tied with the best, which is one feature, Elo after the group stage. *Caveat: I set
+  this rule after seeing the 2026 results, so the 2026 numbers are not a fully blind test.* The repo's earlier
+  `knockout_model.py` used a similar "simplest within 0.01" rule, which lands on the same model.
+- **Extra features and non-linear models don't help.** Previous-World-Cup history, host status, all 15 features,
+  gradient boosting and random forests are all no better than one Elo number, and they are worse on 2026. With
+  150 training games the extra flexibility mostly fits noise.
+
+**The selected model's 2026 bracket** (`bracket_prediction_2026.csv`), filled in from the group stage alone:
+13/16 round-of-32 picks, 5/8 round of 16, **4/4 quarter-finals, 2/2 semi-finals** (it named the final four,
+France, Spain, England and Argentina, and the final, Spain vs Argentina), then picked Argentina (53%) in a final
+that Spain won. **55 of 80 points.** Pre-tournament Elo scored more (70) only because it leaned Spain in the final.
+The bracket score of a single tournament mostly comes down to one or two close games, which is why the model is
+chosen on log-loss, not bracket points.
+
+Exact probabilities of reaching each round (`round_probabilities_2026.csv`, computed over the bracket tree rather than simulated):
+Argentina 33% to win, Spain 25%, France 20%, England 6%.
+Every game's prediction: `knockout_game_predictions_2026.csv`.
+
+---
+
 ## 📁 Project Structure
 
 | File | Description |
@@ -77,6 +136,7 @@ On the 31 real knockout games: the knockout model scored log-loss **0.419** (acc
 | `match_model_v2.py` | v2 W/D/L ensemble; `backtest`, `train` and `groups2026` commands |
 | `tournament.py` | Groups, FIFA 2026 tie-breakers, round-of-32 bracket, historical group → knockout dataset |
 | `knockout_model.py` | The group stage → playoffs model and its feature comparison |
+| `playoff_classifier.py` | **v3** knockout classifier: features frozen after the group stage + previous World Cups, model comparison, 2026 bracket prediction and scoring |
 | `simulate_playoffs.py` | Monte Carlo bracket simulation + backtest against the real 2026 results |
 | `finalize_model.py`, `model_summary_stats.py`, `train_models.py`, `tune_model.py`, `two_stage_model.py` | v1 scripts, kept for reference |
 | `fixture_predictions*.csv`, `model_summary_stats_final.csv`, `validation_predictions*.csv` | v1 outputs from the June 2026 snapshot (superseded) |
@@ -91,6 +151,7 @@ python match_model_v2.py backtest  # -> backtest_match_models.csv
 python match_model_v2.py groups2026   # -> group_stage_predictions_2026.csv
 python knockout_model.py           # -> knockout_model_cv.csv, knockout_model.json
 python simulate_playoffs.py --sims 10000   # -> playoff_*.csv, knockout_*_2026.csv
+python playoff_classifier.py      # -> playoff_classifier_results.csv, bracket_prediction_2026.csv, round_probabilities_2026.csv
 ```
 The raw CSVs (`results.csv`, `shootouts.csv`, `goalscorers.csv`, `former_names.csv`) must be in the same directory. Total runtime is roughly 10 minutes (the backtest is the slow part).
 
